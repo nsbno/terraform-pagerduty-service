@@ -9,7 +9,7 @@ provider "pagerduty" {
 
 locals {
   cleaned_service_name = lower(replace(var.service_name, " ", ""))
-  cleaned_sub_name     = lower(replace(var.sub_name, " ", "" ))
+  cleaned_sub_name     = lower(replace(var.sub_name, " ", ""))
 }
 
 resource "aws_sns_topic" "alarm" {

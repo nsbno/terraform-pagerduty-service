@@ -28,7 +28,7 @@ resource "aws_cloudwatch_metric_alarm" "error_count" {
 
   metric_name = "ErrorCount"
   namespace   = "traffic-notifier/error-count"
-  dimensions  = {
+  dimensions = {
     Endpoint = "POST"
   }
 
