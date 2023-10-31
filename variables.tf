@@ -15,11 +15,17 @@ variable "description" {
 
 variable "escalation_policy_name" {
   type        = string
-  description = "Existing Pagerduty escalation policy name"
+  description = "Existing PagerDuty escalation policy name"
 }
 
 variable "incident_alarm_urgency" {
   type        = string
   default     = "low"
   description = "The urgency of incidents that happen"
+}
+
+variable "business_service_name" {
+  type        = string
+  default     = null
+  description = "The business service your service will be associated with"
 }

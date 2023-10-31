@@ -39,6 +39,29 @@ data "aws_secretsmanager_secret_version" "secret_version" {
 }
 
 /*
+ Pagerduty Business Service
+*/
+
+data "pagerduty_business_service" "this" {
+  count = var.business_service_name != null ? 1 : 0
+  name  = var.business_service_name
+}
+
+resource "pagerduty_service_dependency" "foo" {
+  count = var.business_service_name != null ? 1 : 0
+  dependency {
+    dependent_service {
+      id   = data.pagerduty_business_service.this[count.index].id
+      type = data.pagerduty_business_service.this[count.index].type
+    }
+    supporting_service {
+      id   = pagerduty_service.this.id
+      type = pagerduty_service.this.type
+    }
+  }
+}
+
+/*
  Pagerduty service
 */
 
