@@ -31,7 +31,7 @@ resource "aws_sns_topic_subscription" "alarms_to_pagerduty" {
 */
 
 data "aws_secretsmanager_secret" "this" {
-  arn = "arn:aws:secretsmanager:eu-west-1:061938725231:secret:pagerdutyToken-hLgcOp"
+  arn = "arn:aws:secretsmanager:eu-west-1:727646359971:secret:terraform-pagerduty-service-vMxaaq"
 }
 
 data "aws_secretsmanager_secret_version" "secret_version" {
