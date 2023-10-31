@@ -19,12 +19,18 @@ To use this module, add it to your terraform!
 
 *Note on Escalation Policy*:
 
-- You will have to choose an existing or create a new escalation policy found in https://vyutv.pagerduty.com
+- You will have to choose an existing or create a new escalation policy found in https://vyutv.pagerduty.com/escalation_policies
 - A team will be associated with an escalation policy
+
+*Note on Business Service*:
+
+- Optional to define
+
+- You will have to choose an existing or create a new escalation policy found in https://vyutv.pagerduty.com/business-services
 
 *After Creation*:
 
-By default, incidents will get names from the cloudwatch alarm name. This is not a good descriptive name.
+By default, incidents will get names from the CloudWatch alarm name. This is not a good descriptive name.
 Instead, make sure to always derive the name of the incidents from the alarm description
 
 * Go to your newly created service -> Click on "Integrations" tab
