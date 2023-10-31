@@ -1,4 +1,4 @@
-= terraform-pagerduty-alarm
+= terraform-pagerduty-service
 :!toc-title:
 :!toc-placement:
 :toc:
@@ -17,16 +17,24 @@ Exposes an SNS topic you can send Cloudwatch alarms to, relayed to a Pagerduty s
 
 To use this module, add it to your terraform!
 
-*Note on escalation policy*:
+*Note on Escalation Policy*:
 
 - You will have to choose an existing or create a new escalation policy found in https://vyutv.pagerduty.com
 - A team will be associated with an escalation policy
 
+*After Creation*:
+
+By default, incidents will get names from the cloudwatch alarm name. This is not a good descriptive name.
+Instead, make sure to always derive the name of the incidents from the alarm description
+
+* Go to your newly created service -> Click on "Integrations" tab
+* Click on settings icon for "Amazon Cloudwatch"
+* Edit Integration -> Edit "Derive name from" to "Alarm Description"
 // TODO: Add variables to the module example!
 
 [source,hcl]
 ----
-module "terraform-pagerduty-alarm" {
+module "traffic_notifier_api_errors_pagerduty_service" {
   source = "github.com/nsbno/terraform-pagerduty-alarm?ref=x.y.z"
 
   service_name = "Traffic Notifier"

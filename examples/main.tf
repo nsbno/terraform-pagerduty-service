@@ -11,7 +11,7 @@ provider "aws" {
   region = "eu-west-1"
 }
 
-module "pagerduty_alarm" {
+module "pagerduty_service" {
   source = "../"
 
   service_name = "Traffic Notifier"
@@ -38,5 +38,5 @@ resource "aws_cloudwatch_metric_alarm" "error_count" {
   period              = 60
   evaluation_periods  = 1
 
-  alarm_actions = [module.pagerduty_alarm.sns_topic_arn]
+  alarm_actions = [module.pagerduty_service.sns_topic_arn]
 }
