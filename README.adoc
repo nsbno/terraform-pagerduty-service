@@ -33,9 +33,13 @@ To use this module, add it to your terraform!
 By default, incidents will get names from the CloudWatch alarm name. This is not a good descriptive name.
 Instead, make sure to always derive the name of the incidents from the alarm description
 
-* Go to your newly created service -> Click on "Integrations" tab
+Guide with images can be found on link:https://vygruppen.atlassian.net/wiki/spaces/DEVPLATFORM/pages/6909329424/Application+Alerting#How-to-Derive-Name-from-Description[Confluence]
+
+* Go to your PagerDuty Service Directory and find the newly created service
+* Click on "Integrations" tab
 * Click on settings icon for "Amazon Cloudwatch"
-* Edit Integration -> Edit "Derive name from" to "Alarm Description"
+* Edit Integration -> Edit "Derive name from" to "Alarm Description" 
+** Requires `manager` role or higher
 // TODO: Add variables to the module example!
 
 [source,hcl]
