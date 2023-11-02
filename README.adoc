@@ -56,3 +56,10 @@ module "traffic_notifier_api_errors_pagerduty_service" {
 }
 ----
 
+== Relevant Repositories
+
+You can use these repos together with this repo!
+
+link:https://github.com/nsbno/terraform-aws-alarms[`nsbno/terraform-aws-alarms`]::
+Get ready set up CloudWatch alarms for a variety of usecases.
+Just plug in the SNS topic from this module, and you'll be set and ready to go!
