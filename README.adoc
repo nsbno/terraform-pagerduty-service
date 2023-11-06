@@ -15,7 +15,10 @@ Exposes an SNS topic you can send Cloudwatch alarms to, relayed to a Pagerduty s
 
 == Usage
 
-To use this module, add it to your terraform!
+To use this module, add it to your terraform.
+
+NOTE: Remember to use the link:https://github
+.com/nsbno/terraform-pagerduty-provider-setup[Pagerduty Provider Setup]
 
 *Note on Escalation Policy*:
 
@@ -44,6 +47,14 @@ Guide with images can be found on link:https://vygruppen.atlassian.net/wiki/spac
 
 [source,hcl]
 ----
+module "pagerduty_token" {
+  source = "github.com/nsbno/terraform-pagerduty-provider-setup?ref=x.y.z"
+}
+
+provider "pagerduty" {
+  token = module.pagerduty_token.token
+}
+
 module "traffic_notifier_api_errors_pagerduty_service" {
   source = "github.com/nsbno/terraform-pagerduty-alarm?ref=x.y.z"
 

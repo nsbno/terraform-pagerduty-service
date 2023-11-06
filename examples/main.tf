@@ -4,11 +4,23 @@ terraform {
       source  = "hashicorp/aws"
       version = ">= 5.0.0"
     }
+    pagerduty = {
+      source  = "pagerduty/pagerduty"
+      version = ">= 3.0.0"
+    }
   }
 }
 
 provider "aws" {
   region = "eu-west-1"
+}
+
+module "pagerduty_token" {
+  source = "github.com/nsbno/terraform-pagerduty-provider-setup?ref=x.y.z"
+}
+
+provider "pagerduty" {
+  token = module.pagerduty_token.token
 }
 
 module "pagerduty_service" {
@@ -28,7 +40,7 @@ resource "aws_cloudwatch_metric_alarm" "error_count" {
 
   metric_name = "ErrorCount"
   namespace   = "traffic-notifier/error-count"
-  dimensions = {
+  dimensions  = {
     Endpoint = "POST"
   }
 
