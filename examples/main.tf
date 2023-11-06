@@ -16,7 +16,7 @@ provider "aws" {
 }
 
 module "pagerduty_token" {
-  source = "github.com/nsbno/terraform-pagerduty-provider-setup?ref=x.y.z"
+  source = "github.com/nsbno/terraform-pagerduty-provider-setup?ref=0.0.1"
 }
 
 provider "pagerduty" {
@@ -40,7 +40,7 @@ resource "aws_cloudwatch_metric_alarm" "error_count" {
 
   metric_name = "ErrorCount"
   namespace   = "traffic-notifier/error-count"
-  dimensions  = {
+  dimensions = {
     Endpoint = "POST"
   }
 
