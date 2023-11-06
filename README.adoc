@@ -17,8 +17,8 @@ Exposes an SNS topic you can send Cloudwatch alarms to, relayed to a Pagerduty s
 
 To use this module, add it to your terraform.
 
-NOTE: Remember to use the link:https://github
-.com/nsbno/terraform-pagerduty-provider-setup[Pagerduty Provider Setup]
+[IMPORTANT] 
+Remember to use the link:https://github.com/nsbno/terraform-pagerduty-provider-setup[Pagerduty Provider Setup]
 
 *Note on Escalation Policy*:
 
