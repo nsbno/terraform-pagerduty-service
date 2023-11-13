@@ -29,3 +29,15 @@ variable "business_service_name" {
   default     = null
   description = "The business service your service will be associated with"
 }
+
+variable "acknowledgement_timeout" {
+  type        = string
+  default     = "null"
+  description = "Time in seconds that an incident changes to the Triggered State after being Acknowledged"
+}
+
+variable "auto_resolve_timeout" {
+  type        = string
+  default     = "null"
+  description = "Time in seconds that an incident is automatically resolved if left open for that long"
+}

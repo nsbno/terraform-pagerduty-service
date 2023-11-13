@@ -57,6 +57,9 @@ resource "pagerduty_service" "this" {
   }
 
   escalation_policy = data.pagerduty_escalation_policy.this.id
+
+  acknowledgement_timeout = var.acknowledgement_timeout
+  auto_resolve_timeout    = var.auto_resolve_timeout
 }
 
 # Connect a pagerduty endpoint for Cloudwatch
