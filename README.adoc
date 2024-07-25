@@ -3,19 +3,12 @@
 :!toc-placement:
 :toc:
 
-// TODO: Write a sentence about what this module is for
-This module creates a PagerDuty service with an CloudWatch integration and outputs an SNS topic arn you can publish alarms to.
-For a full example of usage, see link:examples/main.tf[].
+This modules exposes an SNS topic you can send Cloudwatch alarms to, relayed to a Pagerduty service alarm for your team.
 
 toc::[]
 
-== About
-// TODO: Write what this module does and what problem it solves
-Exposes an SNS topic you can send Cloudwatch alarms to, relayed to a Pagerduty service alarm for your team.
 
 == Usage
-
-To use this module, add it to your terraform.
 
 [IMPORTANT] 
 Remember to use the link:https://github.com/nsbno/terraform-pagerduty-provider-setup[Pagerduty Provider Setup]
@@ -66,6 +59,10 @@ module "traffic_notifier_api_errors_pagerduty_service" {
   escalation_policy_name = "Test Escalation Policy"
 }
 ----
+
+== Example
+link:examples/main.tf[Full example]::
+Check this for a full example of how to set up Pagerduty.
 
 == Relevant Repositories
 
